@@ -40,7 +40,7 @@ Create a Spring Boot Application that connects with MongoDB.
         
     
         
-3. Download the sample project and replace the values on application.properties file with the ones from the database you created at MongoDB Atlas.
+3. Download the sample project and replace the spring.data.mongodb.uri value on application.properties file with the ones copied on step 2)
 
 
 4. Run the project and verify that the connection is correct.
