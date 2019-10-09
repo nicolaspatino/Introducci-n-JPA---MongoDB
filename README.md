@@ -3,34 +3,40 @@ Create a Spring Boot Application that connects with MongoDB.
 
 
 ## Part 1: Basic Mongo DB configuration and Spring Boot Integration
-1. Create a free Mongo DB Hosting account on Mlab:
+1. Create a free MongoDB Atlas account on:
 
-    https://mlab.com/signup/
+    https://www.mongodb.com/atlas-signup-from-mlab
     
-2. Configure the datbase:
+2. Configure the MongoDB Cluster:
 
-    * Create new database of SANDBOX Type
+    * Create new Organization
     
-        ![](img/step-1.png)
+        ![](img/step-1-a.png)
+        
+        ![](img/step-1-b.png)
     
-    * Select any region
-    
+    * Create a new Starter Cluster (free) using any Cloud Provider and Region
+   
         ![](img/step-2.png)
 
-    * Give a name to your DB
+    * Go to Database Access menu on the left panel and create a user and a password
     
         ![](img/step-3.png)
         
-    * Once your database is created copy the uri and replace the value on your application.properties
+    * Go to Network Access menu on the left panel and add your IP so it lets the application connect from your current IP address
     
         ![](img/step-4.png)
         
-    * Create a user and then replace the <dbuser> and <dbpassword>  on the MongoDB URI
+    * Go to the cluster menu on the left panel and click on  on your application.properties(make sure you replace the <password> tag with the user password)
     
-        ![](img/step-5.png)
+        ![](img/step-5-a.png)
+        
+        ![](img/step-5-b.png)
+        
+        
     
         
-3. Download the sample project and replace the values on application.properties file with the ones from the database you created at Mlab.
+3. Download the sample project and replace the values on application.properties file with the ones from the database you created at MongoDB Atlas.
 
 
 4. Run the project and verify that the connection is correct.
