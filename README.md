@@ -27,8 +27,12 @@ Create a Spring Boot Application that connects with MongoDB.
     
         ![](img/step-4.png)
         
-    * Go to the cluster menu on the left panel and click on  on your application.properties(make sure you replace the <password> tag with the user password)
+    * Go to the cluster menu on the left panel and click on the Connect button
     
+        ![](img/step-5.png)
+        
+    * Select the option Connect your Application and then copy the connection String only(make sure you replace the <password> tag with the created user password)
+        
         ![](img/step-5-a.png)
         
         ![](img/step-5-b.png)
