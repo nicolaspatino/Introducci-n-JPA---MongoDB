@@ -90,15 +90,13 @@ Create a Spring Boot Application that connects with MongoDB.
         @Bean
         public MongoDbFactory mongoDbFactory() throws Exception {
     
-            // Set credentials
-            MongoCredential credential = MongoCredential.createCredential("username", "database", "password".toCharArray());
-            ServerAddress serverAddress = new ServerAddress("ds149672.mlab.com", 49672);
+             MongoClientURI uri = new MongoClientURI(
+            "mongodb+srv://sancarbar:<password>@cluster0-dzkk5.mongodb.net/test?retryWrites=true&w=majority");
+
+            MongoClient mongoClient = new MongoClient(uri);
+
+            return new SimpleMongoDbFactory( mongoClient, "test");
     
-            // Mongo Client
-            MongoClient mongoClient = new MongoClient(serverAddress, credential, new MongoClientOptions.Builder().build());
-    
-    
-            return new SimpleMongoDbFactory(mongoClient, "cosw-test");
         }
     
         @Bean
