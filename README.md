@@ -1,4 +1,4 @@
-# jpa-mongodb
+# 2.3 JPA with MongoDB
 Create a Spring Boot Application that connects with MongoDB.
 
 
