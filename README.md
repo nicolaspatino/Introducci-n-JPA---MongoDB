@@ -1,49 +1,63 @@
 # 2.3 JPA with MongoDB
 Create a Spring Boot Application that connects with MongoDB.
 
-
 ## Part 1: Basic Mongo DB configuration and Spring Boot Integration
-1. Create a free MongoDB Atlas account on:
+1. Create a MongoDB Atlas account on [https://www.mongodb.com/atlas-signup-from-mlab](https://www.mongodb.com/atlas-signup-from-mlab):
 
-    https://www.mongodb.com/atlas-signup-from-mlab
-    
+    * Select the free tier:
+        ![](img/create-free-account.png)
+
 2. Configure the MongoDB Cluster:
-
-    * Create new Organization
-    
-        ![](img/step-1-a.png)
-        
-        ![](img/step-1-b.png)
-    
+ 
     * Create a new Starter Cluster (free) using any Cloud Provider and Region
    
-        ![](img/step-2.png)
+        ![](img/select-provider.png)
 
-    * Go to Database Access menu on the left panel and create a user and a password
-    
-        ![](img/step-3.png)
-        
-    * Go to Network Access menu on the left panel and add your IP so it lets the application connect from your current IP address
-    
-        ![](img/step-4.png)
-        
-    * Go to the cluster menu on the left panel and click on the Connect button
-    
-        ![](img/step-5.png)
-        
-    * Select the option Connect your Application and then copy the connection String only(make sure you replace the \<password\> tag with the created user password)
-        
-        ![](img/step-5-a.png)
-        
-        ![](img/step-5-b.png)
-        
-        
-    
-        
-3. Download the sample project and replace the spring.data.mongodb.uri value on application.properties file with the connection String copied on step 2)
+     * Scroll down to _Cluster Name_ and give the cluster a name. Click on *Create Cluster*
 
+        ![](img/set-cluster-name.png)
 
-4. Run the project and verify that the connection is correct.
+    * Wait until the cluster is provisioned and gets ready
+
+        ![](img/cluster-ready.png)   
+
+    * Go to Database Access menu on the left panel and create a user and a password for connecting to the DB
+    
+        ![](img/create-user.png)
+        
+    * Go to Network Access on the left panel and add your IP so that it lets the application connect from your current IP address
+    
+        ![](img/network-access.png)
+
+        ![](img/add-user.png)
+        
+    * Go to the cluster menu on the left panel and click on the _Connect_ button
+    
+        ![](img/connect-to-cluster.png)
+        
+    * Select the option *Connect Your Application* and then copy the connection string. Before using it, replace the \<password\> placeholder with the password of the user you created previously.
+        
+        ![](img/get-connection-string.png)
+        
+        
+         ![](img/copy-connection-string.png)
+        
+        
+3. Clone this repo.
+
+4. Create a new file in the root folder named *application.yml*.
+
+5. Copy the following contents and replace the connection string placeholder with the value you got in the previous step. 
+
+    ``` yaml
+        spring:
+          data:
+            mongodb:
+              uri: <CONNECTION_STRING> 
+
+    ```
+
+6. Run the project and verify that the connection to the database works properly.
 
 
 5. Create two more models (User and Todo) with the following structure:
@@ -73,9 +87,11 @@ Create a Spring Boot Application that connects with MongoDB.
     ````                  
     
     
-6. Create a repository for each model(use the *CustomerRepository* as reference)
+6. Create a repository for each model using the *CustomerRepository* as reference.
 
-7. Add a method to the TodoRepository *findByResponsible* and verify it works (write a unit test for this method)
+7. Add a method to the TodoRepository *findByResponsible* and verify it works.
+
+8. Write a unit test for this method.
 
 ## Part 2: Custom configuration and Queries
 

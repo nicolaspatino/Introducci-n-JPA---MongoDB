@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.2.5.RELEASE")
     }
 }
 
@@ -14,8 +14,8 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 bootJar {
-    baseName = 'gs-accessing-data-mongodb'
-    version =  '0.1.0'
+    baseName = 'ieti-accessing-data-mongodb'
+    version =  '1.0.0'
 }
 
 repositories {
