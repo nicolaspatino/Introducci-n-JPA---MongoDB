@@ -50,15 +50,20 @@ Create a Spring Boot Application that connects with MongoDB.
 5. Copy the following contents and replace the connection string placeholder with the value you got in the previous step. 
 
     ``` yaml
-        spring:
-          data:
-            mongodb:
-              uri: <CONNECTION_STRING> 
-
+    spring:
+      data:
+        mongodb:
+          uri: <CONNECTION_STRING> 
     ```
 
-6. Run the project and verify that the connection to the database works properly.
+6. Run the project and verify that the connection to the database works properly. Answer the following questions:
 
+- How many customers were created in the database?
+- Where is the *findAll* method implemented?
+- Suppose you have more than 1000 products in your database. How would you implement a method for supporting pagination and return pages of 50 products to your frontend?
+- How many products contain the "plus" word in their description?
+- How many products are returned by the *findByDescriptionContaining* query? Why?
+- Which are the collection names where the objects are stored? Where are those names assigned?
 
 5. Create two more models (User and Todo) with the following structure:
 
@@ -87,18 +92,20 @@ Create a Spring Boot Application that connects with MongoDB.
     ````                  
     
     
-6. Create a repository for each model using the *CustomerRepository* as reference.
+6. Create a repository for the _Users_ using the *CustomerRepository* as reference.
 
-7. Add a method to the TodoRepository *findByResponsible* and verify it works.
+7. Create a repository for the _Todos_ using the *ProductRepository* as reference.
 
-8. Write a unit test for this method.
+8. Add a *findByResponsible* method to the TodoRepository and verify it works. The method must support pagination
+
+*Note:* You can find more information about Spring Data for Mongo DB [here](https://spring.io/projects/spring-data-mongodb) and some code samples [here](https://github.com/spring-projects/spring-data-book/tree/master/mongodb). 
+
 
 ## Part 2: Custom configuration and Queries
 
 1. Create a configuration class with the following code:
 
     ````java
-
 
     @Configuration
     public class AppConfiguration {
@@ -155,13 +162,13 @@ Create a Spring Boot Application that connects with MongoDB.
     * https://www.baeldung.com/queries-in-spring-data-mongodb
     * https://www.mkyong.com/mongodb/spring-data-mongodb-query-document/
 
-6. Create mocked data for 25 Todos and 10 different users (make sure the Todos have different dueDates and responsible)
+6. In the *Application* class create mocked data for 25 Todos and 10 different users (make sure the Todos have different dueDates and responsible)
 
 7. Create the following queries using the Query class:
 
-    * Todos that the dueDate has expire
+    * Todos where the dueDate has expired
     * Todos that are assigned to given user and have priority greater equal to 5
-    * List users that have assigned more than 2 Todos.
-    * Todo list that contains the description with a length greater than 30 characters           
-    
-    
+    * Users that have assigned more than 2 Todos.
+    * Todos that contains a description with a length greater than 30 characters        
+
+8. Implement the queries of the previous step using *derived query methods* in your repository interface. Is it possible to implement all of them?
