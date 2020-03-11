@@ -1,7 +1,8 @@
-package eci.cosw;
+package eci.ieti;
 
-import eci.cosw.data.CustomerRepository;
-import eci.cosw.data.model.Customer;
+import eci.ieti.data.CustomerRepository;
+import eci.ieti.data.model.Customer;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

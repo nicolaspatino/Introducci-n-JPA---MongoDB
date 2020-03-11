@@ -1,7 +1,8 @@
-package eci.cosw.data;
+package eci.ieti.data;
 
-import eci.cosw.data.model.Customer;
 import org.springframework.data.mongodb.repository.MongoRepository;
+
+import eci.ieti.data.model.Customer;
 
 import java.util.List;
 

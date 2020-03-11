@@ -1,4 +1,4 @@
-package eci.cosw.data.model;
+package eci.ieti.data.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
