@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://user:user@baseprueba-ga0ch.mongodb.net/test?retryWrites=true&w=majority
